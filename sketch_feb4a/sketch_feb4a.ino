@@ -21,26 +21,25 @@ float duration,distance;
   duration = pulseIn(echo,HIGH);
   distance = duration / 29/ 2;
 Serial.print(distance);
-if (distance < 50 )
+if (distance < 10)
 {
-  tone(buzz,500,500);
-  digitalWrite(led,LOW);
+  tone(buzz, 1000, 500);
+  digitalWrite(led, HIGH);
   delay(500);
 }
-else if (distance<20)
+else if (distance < 20)
 {
-  tone(buzz,750,500);
-  digitalWrite(led,HIGH);
+  tone(buzz, 750, 500);
+  digitalWrite(led, HIGH);
   delay(500);
-  
 }
-else if (distance < 10)
+else if (distance < 50)
 {
-  tone(buzz,1000,500);
-  digitalWrite(led,HIGH);
+  tone(buzz, 500, 500);
+  digitalWrite(led, LOW);
   delay(500);
-  
 }
+
 delay(1000);
 
 }
